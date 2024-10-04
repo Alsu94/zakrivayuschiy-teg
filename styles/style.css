@@ -166,6 +166,7 @@
 .article__title {
   font-size: 18px;
   font-weight: var(--title-font-weight);
+  font-variation-settings: 'wght' var(--title-font-weight);
   padding-block: 3px;
   padding-inline: 10px;
   border: 2px solid var(--text-color);
@@ -193,6 +194,7 @@
 
 .article__text:not(:last-child) {
   font-weight: var(--text-font-weight);
+  font-variation-settings: 'wght' var(--text-font-weight);
   padding-block-end: 27px;
 }
 
@@ -204,7 +206,6 @@
 
 .card__icon-button {
   border: none;
-  /* padding: 4px 4px 5px; */
   background: inherit;
   padding: 0;
   align-self: center;
