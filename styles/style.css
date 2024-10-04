@@ -34,11 +34,11 @@
   align-items: center;
 }
 
-@supports (font-variation-settings: normal) {
+/* @supports (font-variation-settings: normal) {
   .page {
     font-family: 'Inter-Variable', sans-serif;
   }
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   .page {
@@ -47,13 +47,8 @@
 }
 
 .header, .content {
-  /* width: max(700px, min(375px, 100%)); */
-
   width: clamp(min(375px, 100%), 100%, 700px);
   background-color: var(--bg-color);
-  /* box-sizing: border-box; */
-  /* max-width: 700px; */
-  /* min-width: 375px; */
 }
 
 .header {
@@ -101,18 +96,6 @@
   text-transform: uppercase;
   width: fit-content;
 }
-
-/* .theme-menu__button::before {
-  content: '▶';
-  display: inline-block;
-  opacity: 0;
-  animation-name: arrow;
-  animation-duration: .5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-
-} */
 
 .theme-menu__button:disabled {
   pointer-events: none;
@@ -165,8 +148,8 @@
 
 .article__title {
   font-size: 18px;
-  font-weight: var(--title-font-weight);
-  font-variation-settings: 'wght' var(--title-font-weight);
+  /* font-weight: var(--title-font-weight); */
+  font-variation-settings: 'wght' var(--title-font-weight, 700);
   padding-block: 3px;
   padding-inline: 10px;
   border: 2px solid var(--text-color);
@@ -193,8 +176,8 @@
 }
 
 .article__text:not(:last-child) {
-  font-weight: var(--text-font-weight);
-  font-variation-settings: 'wght' var(--text-font-weight);
+  /* font-weight: var(--text-font-weight); */
+  font-variation-settings: 'wght' var(--text-font-weight, 400);
   padding-block-end: 27px;
 }
 
@@ -226,12 +209,6 @@
   display: flex;
   align-items: center;
   position: relative;
-}
-
-/* .svg__like, .like-icon { */
-.like-icon {
-  /* position: absolute;
-  inset-inline-start: -40px; */
 }
 
 .button__save {
@@ -331,17 +308,12 @@
   transition: fill .3s .05s linear;
 }
 
-
-
-
 .like-icon.is-liked .core, 
 .like-icon.is-liked .contour, 
 .like-icon.is-liked .main-body {
   fill: var(--spark-heart-color);
   opacity: 1;
 }
-
-
 
 .like-icon.is-liked .main-body {
   transition: fill .3s linear;
@@ -354,7 +326,6 @@
 .like-icon.is-liked .contour {
   transition: fill .3s .06s linear;
 }
-
 
 
 .like-icon.is-liked .sparks {
@@ -397,19 +368,19 @@
 
 @keyframes arrow {
   0% {
-    translate: 1px;
+    transform: translate(1px);
   }
 
   33% {
-    translate: 2px;
+    transform: translate(2px);
   }
 
   66% {
-    translate: 3px;
+    transform: translate(3px);
   }
 
   100% {
-    translate: 4px;
+    transform: translate(4px);
   }
 }
 
