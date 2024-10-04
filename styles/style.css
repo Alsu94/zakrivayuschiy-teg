@@ -36,15 +36,15 @@
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-family: var(--main-font);
+    font-family: 'Inter-Variable', sans-serif;
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .page {
-   
+    background-image: url(../svg/pattern-dark.svg);
   }
-} */
+}
 
 .header, .content {
   /* width: max(700px, min(375px, 100%)); */
