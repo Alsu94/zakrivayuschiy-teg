@@ -6,6 +6,7 @@
   --title-font-weight: 700;
   --bg-color: #fff;
   --text-color: #000;
+  --spark-heart-color: #FF0000;
 }
 
 @media (prefers-color-scheme: dark) {
