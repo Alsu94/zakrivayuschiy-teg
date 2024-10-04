@@ -325,6 +325,11 @@
   transition: fill .3s .06s linear;
 }
 
+.like-icon .contour {
+  fill: var(--text-color);
+  transition: fill .1s linear;
+}
+
 
 .like-icon.is-liked .sparks {
   animation-name: appearance;
