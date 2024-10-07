@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"> -->
     <title>Закрывающий тег</title>
     <meta name="color-scheme" content="light dark">
 
@@ -20,8 +19,8 @@
   </head>
   <body class="page">
     <header class="header">
-      <h1 class="header__title">&lt;/html&gt;</h1>
-      <h2 class="header__sub-title">закрывающий тег</h2>
+      <a class="header__logo">&lt;/html&gt;</a>
+      <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -81,15 +80,15 @@
           </div>
 
         </div>
-
-        <button class="button__save button__border">
-          <svg viewBox="0 0 21 21" width="21" height="21" class="svg-floppy">
-            <use href="images/floppy.svg#floppy" class="floppy-color"/>
-          </svg>
-          <span class="button__text">Сохранить на память</span>
-        </button>
      
       </article>
+
+      <button class="button__save button__border">
+        <svg viewBox="0 0 21 21" width="21" height="21" class="svg-floppy">
+          <use href="images/floppy.svg#floppy" class="floppy-color"/>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
 
     </main>
     <script src="./scripts/set-theme.js"></script>

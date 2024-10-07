@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --main-font: 'Inter-Variable', sans-serif;
-  --accent-font: 'PressStart2P-Regular', sans-serif;
+  --accent-font: 'PressStart2P-Regular', 'fantasy';
   --text-font-weight: 400;
   --title-font-weight: 700;
   --bg-color: #fff;
@@ -9,11 +9,3 @@
   --spark-heart-color: #FF0000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-font-weight: 465;
-    --title-font-weight: 785;
-    --bg-color: #000;
-    --text-color: #00CC14;
-  }
-}
