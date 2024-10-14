@@ -150,7 +150,7 @@
 }
 
 .filter__saturate .article__image {
-  filter: saturate(0.3);
+  filter: saturate(0.1);
 }
 
 .filter__brightness .article__image {
