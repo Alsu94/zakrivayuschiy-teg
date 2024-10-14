@@ -21,15 +21,10 @@
   font-weight: var(--text-font-weight);
   font-variation-settings: 'wght' var(--text-font-weight, 400);
   font-size: 18px;
-  /* background-color: var(--bg-color); */
   color: var(--text-color);
   background-image: var(--bg-gradient);
   background-size: cover;
-  /* background-image: url(../svg/pattern-light.svg);
-  background-repeat: repeat;
-  background-size: 4px; */
   background-attachment: fixed;
-  
 
   display: flex;
   flex-direction: column;
@@ -42,15 +37,13 @@
   }
 } */
 
-
-
 .header, .content {
   width: clamp(min(375px, 100%), 100%, 700px);
   background-color: var(--bg-color);
 }
 
 .header {
-  font-family: 'PressStart2P-Regular', 'fantasy';
+  font-family: var(--accent-font);
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -122,7 +115,6 @@
   transform-origin: left bottom;
   transform: scaleX(0);
   transition: none;
-
 }
 
 .article__llist {
@@ -155,7 +147,6 @@
   object-fit: contain;
   object-position: center;
   font-size: 0;
-  
 }
 
 .filter__saturate .article__image {
@@ -188,19 +179,18 @@
 
 .article__label {
   position: absolute;
-  inset-block-start: 25px;
-  inset-inline-end: 25px;
-  /* color: white; */
+  inset-block-start: 20px;
+  inset-inline-end: clamp(13px, 3vw, 25px);
   font-family: var(--accent-font);
   font-size: 14px;
   text-transform: lowercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
   text-shadow: 
     -1px 0 var(--text-shadow-color), 
     0 1px var(--text-shadow-color), 
     1px 0 var(--text-shadow-color), 
     0 -1px whitevar(--text-shadow-color);
-  mix-blend-mode: hard-light;
-  opacity: 0.5;
 }
 
 .no_filter .article__label, 
@@ -254,7 +244,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .button__save {
@@ -264,16 +253,26 @@
   gap: 8px;
   margin: 52px auto 100px auto;
   padding: 15px 20px;
-  position: relative;
+}
+
+.button__save .svg-floppy {
+  height: 21px;
+  width: 21px;
 }
 
 @media (width <= 375px) {
   .button__save {
     flex-direction: column;
   }
+
+  .button__save .svg-floppy {
+    height: 28px;
+    width: 28px;
+  }
 }
 
 .button__border {
+  position: relative;
   font-family: var(--accent-font);
   font-size: 14px;
   background-color: inherit;
@@ -291,7 +290,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: var(--text-color);
+  background: var(--accent-bg-color);
   mix-blend-mode: difference;
   transform: scaleX(0);
   transform-origin: left top;
@@ -316,6 +315,8 @@ dialog {
   transition: opacity .3s ease-in-out;
   border: 2px solid var(--text-color);
   padding: 30px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 } 
 
 dialog:not([open]) {
