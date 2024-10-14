@@ -13,7 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -145,25 +144,84 @@
   border: 2px solid var(--text-color);
 }
 
+.article__context {
+  border: 2px solid var(--text-color);
+  position: relative;
+}
+
 .article__image {
   display: block;
   width: 100%;
   object-fit: contain;
   object-position: center;
-  border: 2px solid var(--text-color);
   font-size: 0;
-
+  
 }
+
+.filter__saturate .article__image {
+  filter: saturate(0.3);
+}
+
+.filter__brightness .article__image {
+  filter: brightness(1.7);
+}
+
+.filter__hue-rotate .article__image {
+  filter: hue-rotate(0.1turn);
+}
+
+.filter__invert .article__image {
+  filter: invert(80%);
+}
+
+.filter__sepia .article__image {
+  filter: sepia(0.6);
+}
+
+.filter__blur .article__image {
+  filter: blur(15px);
+}
+
+.filter__multi .article__image {
+  filter: hue-rotate(0.8turn) grayscale(50%);
+}
+
+.article__label {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  /* color: white; */
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: lowercase;
+  text-shadow: 
+    -1px 0 var(--text-shadow-color), 
+    0 1px var(--text-shadow-color), 
+    1px 0 var(--text-shadow-color), 
+    0 -1px whitevar(--text-shadow-color);
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+}
+
+.no_filter .article__label, 
+.filter__saturate .article__label, 
+.filter__brightness .article__label {
+  text-transform: uppercase;
+}
+
+@supports((text-stroke: 1px var(--text-shadow-color)) or (-webkit-text-stroke: 1px var(--text-shadow-color))) {
+  .article__label {
+      -webkit-text-stroke: 1px var(--text-shadow-color);
+      text-stroke: 1px var(--text-shadow-color);
+      text-shadow: none;
+  }
+} 
 
 .article__content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  /* padding: 24px; */
-  padding-block: 22px;
-  padding-inline: 25px;
-  /* border-inline: 2px solid var(--text-color);
-  border-block: 2px solid var(--text-color); */
+  gap: 26px;
+  padding: 22px 25px;
   border: 2px solid var(--text-color);
 
 }
@@ -216,13 +274,14 @@
 }
 
 .button__border {
-  font-family: 'PressStart2P-Regular', 'fantasy';
+  font-family: var(--accent-font);
   font-size: 14px;
   background-color: inherit;
   border: 2px solid var(--text-color);
   cursor: pointer;
   background: none;
-  transition: box-shadow .3s ease, color 1s ease;
+  color: inherit; 
+  transition: box-shadow .3s ease;
 }
 
 .button__border:before {
@@ -233,14 +292,10 @@
   width: 100%;
   height: 100%;
   background: var(--text-color);
+  mix-blend-mode: difference;
   transform: scaleX(0);
   transform-origin: left top;
   transition: .5s ease-in-out;
-}
-
-.button__text, .svg-floppy {
-  position: relative;
-  z-index: 2;
 }
 
 .floppy-color {
@@ -251,3 +306,41 @@
   opacity: 0;
 }
 
+
+dialog {
+  width: clamp(341px, 100%, 357px);
+  min-width: 341px;
+  position: fixed;
+  inset: 0;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  border: 2px solid var(--text-color);
+  padding: 30px;
+} 
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+dialog[open] {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 30px 20px;
+}
+
+.button__dialog {
+  grid-column: 1 / -1;
+  padding-block: 12.5px;
+}
+
+.dialog__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}

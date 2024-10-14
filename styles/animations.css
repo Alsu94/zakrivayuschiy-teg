@@ -50,13 +50,6 @@
   transform: scaleX(1);
 }
 
-.button__border:hover {
-  color: var(--bg-color);
-}
-
-
-
-
 .like-icon .main-body,  
 .like-icon .core {
   fill: var(--bg-color);
