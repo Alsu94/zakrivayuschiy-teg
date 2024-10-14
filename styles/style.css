@@ -280,7 +280,7 @@
   border: 2px solid var(--text-color);
   cursor: pointer;
   background: none;
-  color: inherit; 
+  color: inherit;
   transition: box-shadow .3s ease;
 }
 
