@@ -40,13 +40,6 @@
 .header {
   width: clamp(min(375px, 100%), 100%, 700px);
   background-color: var(--bg-color);
-}
-
-.content {
-  width: clamp(min(375px, 100%), 100%, 700px);
-}
-
-.header {
   font-family: var(--accent-font);
   text-transform: uppercase;
   display: flex;
@@ -119,6 +112,10 @@
   transform-origin: left bottom;
   transform: scaleX(0);
   transition: none;
+}
+
+.content {
+  width: clamp(min(375px, 100%), 100%, 700px);
 }
 
 .article__llist {
